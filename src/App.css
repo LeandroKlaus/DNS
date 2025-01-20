@@ -1,0 +1,290 @@
+/* Adicionando uma fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff !important;
+}
+
+.header {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px !important;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.header-content {
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 10px !important;
+}
+
+.header-content .GS {
+  margin-left: 50px;
+  width: 45px !important;
+  height: auto !important;
+  margin-right: 10px;
+}
+
+.header-logo-center {
+  margin-right: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Permite que a logo central ocupe o espaço central */
+}
+
+.header-logo-center img {
+  max-height: 100px; /* Ajuste conforme necessário */
+}
+
+.nav-large {
+  text-decoration: none;
+  color: #333;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-menu-icons {
+  margin-right: 80px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-menu-icons li {
+  display: inline;
+}
+
+.nav-menu-icons li a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-menu-icons li img {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s;
+}
+
+.nav-menu-icons li:hover img {
+  filter: invert(31%) sepia(92%) saturate(7402%) hue-rotate(349deg) brightness(90%) contrast(115%);
+}
+
+.main-content {
+  margin-top: 100px !important; /* Ajusta a margem superior para dar espaço ao header fixo */
+  margin-left: 20px; /* Margem à esquerda */
+  margin-right: 20px; /* Margem à direita */
+  margin-bottom: 100px; /* Margem inferior */
+  padding: 40px;
+  text-align: center;
+  background-color: #151515 !important;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.main-title {
+  font-size: 36px !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.main-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.moto-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.moto-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.moto-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.moto-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #ffffff;
+  color: #151515;
+  border: 2px solid #151515;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Montserrat', Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+footer {
+  background-color: #ffffff !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px !important;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  flex-wrap: wrap; /* Permite que os elementos se ajustem em múltiplas linhas, se necessário */
+  display: none; /* Oculta o footer inicialmente */
+}
+
+.footer-visible {
+  display: flex; /* Exibe o footer quando a classe "footer-visible" é adicionada */
+}
+
+.footer-left {
+  margin-left: 30px;
+  text-align: left;
+  flex: 1; /* Permite que ocupe espaço disponível */
+  font-size: 12px; /* Define o tamanho da fonte menor para o texto no lado esquerdo */
+}
+
+.footer-center {
+  text-align: center;
+  flex-grow: 1; /* Permite que ocupe o espaço central */
+}
+
+.footer-right {
+  text-align: right;
+  flex: 1; /* Permite que ocupe espaço disponível */
+}
+
+.footer-logo {
+  width: 50px; /* Ajuste conforme necessário */
+  height: auto;
+  margin-left: 0px;
+}
+
+.footer-powered {
+  margin-right: 40px;
+  display: block;
+  margin-top: 5px;
+  color: #151515;
+  text-decoration: none;
+  font-size: 12px; /* Ajuste para não ocupar muito espaço */
+  text-align: right;
+}
+
+/* Estilo para o Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo embaçado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.modal form input,
+.modal form select {
+  display: block;
+  width: 90%;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal form .btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilo para a ficha técnica */
+.ficha-tecnica {
+  text-align: left;
+  margin: 20px 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #333;
+}
+
+.ficha-tecnica p {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
