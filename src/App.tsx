@@ -21,23 +21,24 @@ const App: React.FC = () => {
   const [habilitacao, setHabilitacao] = useState<string>('sim');
   const [celular, setCelular] = useState<string>('');
 
- useEffect(() => {
-  axios.get('https://gustavosadok.vercel.app/motos')
-    .then(response => {
-      console.log('Dados das motos:', response.data); // Verifique se está recebendo dados
-      setMotos(response.data);
-    })
-    .catch(error => {
-      console.error('Erro ao buscar motos', error);
-    });
-}, []);
-
+  useEffect(() => {
+    axios.get('http://localhost:5000/motos')
+      .then(response => {
+        console.log('Dados das motos:', response.data); // Verifique se está recebendo dados
+        setMotos(response.data);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar motos', error);
+      });
+  }, []);  
 
   useEffect(() => {
     const handleScroll = () => {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        console.log("Footer visível");
         setIsFooterVisible(true);
       } else {
+        console.log("Footer não visível");
         setIsFooterVisible(false);
       }
     };
