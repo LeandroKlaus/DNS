@@ -21,15 +21,17 @@ const App: React.FC = () => {
   const [habilitacao, setHabilitacao] = useState<string>('sim');
   const [celular, setCelular] = useState<string>('');
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/motos')
-      .then(response => {
-        setMotos(response.data);
-      })
-      .catch(error => {
-        console.error('Erro ao buscar motos', error);
-      });
-  }, []);
+ useEffect(() => {
+  axios.get('https://gustavosadok.vercel.app/motos')
+    .then(response => {
+      console.log('Dados das motos:', response.data); // Verifique se está recebendo dados
+      setMotos(response.data);
+    })
+    .catch(error => {
+      console.error('Erro ao buscar motos', error);
+    });
+}, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
