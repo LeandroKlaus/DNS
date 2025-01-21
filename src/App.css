@@ -91,7 +91,7 @@ body {
 }
 
 .main-content {
-  margin-top: 100px !important; /* Ajusta a margem superior para dar espaço ao header fixo */
+  margin-top: 70px !important; /* Ajusta a margem superior para dar espaço ao header fixo */
   margin-left: 20px; /* Margem à esquerda */
   margin-right: 20px; /* Margem à direita */
   margin-bottom: 100px; /* Margem inferior */
