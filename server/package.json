@@ -1,7 +1,7 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "main": "server.js",
+  "name": "gs",
+  "version": "0.0.0",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
     "start:frontend": "vite",
@@ -11,5 +11,8 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "vite": "^6.0.7"
   }
 }
