@@ -12,7 +12,9 @@ const MotoGallery: React.FC<MotoGalleryProps> = ({ motos, handleFinanciamento, h
     <div className="moto-gallery">
       {motos.map((moto, index) => (
         <div key={index} className="moto-card">
-          <img src={moto.imagem} alt={`Modelo de Moto ${index + 1}`} className="moto-image" />
+          {/* Exibe a imagem da moto diretamente do campo 'imagem' */}
+          <img src={moto.imagem} alt={`Modelo de Moto ${moto.modelo}`} className="moto-image" />
+          <h3>{moto.modelo}</h3> {/* Exibe o modelo da moto */}
           <div className="moto-buttons">
             <button className="btn" onClick={() => handleFinanciamento(moto)}>Financiamento</button>
             <button className="btn" onClick={() => handleConsorcio(moto)}>Consórcio</button>

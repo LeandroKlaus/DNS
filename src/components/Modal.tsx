@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ModalProps {
   closeModal: () => void;
@@ -124,10 +124,13 @@ const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedMoto }) =>
         )}
         {modalType === 'informacoes' && (
           <>
-            <h2>{selectedMoto.modelo}</h2>
-            <div className="ficha-tecnica">
-              <p>{selectedMoto.fichaTecnica}</p>
-            </div>
+            <h2>{selectedMoto.modelo} - Ficha Técnica</h2>
+            <p>{selectedMoto.fichaTecnica?.Especificacoes_Gerais || 'Nenhuma informação disponível'}</p>
+            <p>Motor: {selectedMoto.fichaTecnica?.Motor || 'Nenhuma informação disponível'}</p>
+            <p>Transmissão: {selectedMoto.fichaTecnica?.Transmissao || 'Nenhuma informação disponível'}</p>
+            <p>Suspensão e Freios: {selectedMoto.fichaTecnica?.Suspensao_e_Freios || 'Nenhuma informação disponível'}</p>
+            <p>Dimensões: {selectedMoto.fichaTecnica?.Dimensoes || 'Nenhuma informação disponível'}</p>
+            <p>Pneus: {selectedMoto.fichaTecnica?.Pneus || 'Nenhuma informação disponível'}</p>
             <button type="button" className="btn" onClick={closeModal}>Fechar</button>
           </>
         )}

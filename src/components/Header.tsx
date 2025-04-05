@@ -23,7 +23,7 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="https://wa.me/5592981561566?text=Estou%20interessado%20em%20adquirir%20uma%20nova%20moto" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5592981561566?text=Olá,%20Gustavo,%20estou%20interessado%20em%20adquirir%20uma%20nova%20moto." target="_blank" rel="noopener noreferrer">
               <img src={wppIcon} alt="WhatsApp" />
             </a>
           </li>

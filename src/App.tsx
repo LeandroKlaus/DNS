@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
+import { motos } from './models/Motos';
 import './styles/Header.css';
 import './styles/MainContent.css';
 import './styles/MotoGallery.css';
@@ -12,21 +12,10 @@ import './styles/Modal.css';
 import './App.css';
 
 const App: React.FC = () => {
-  const [motos, setMotos] = useState<any[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedMoto, setSelectedMoto] = useState<any>(null);
   const [modalType, setModalType] = useState<string>('');
   const [isFooterVisible, setIsFooterVisible] = useState<boolean>(false);
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/motos')
-      .then(response => {
-        setMotos(response.data);
-      })
-      .catch(error => {
-        console.error('Erro ao buscar motos', error);
-      });
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,18 +34,21 @@ const App: React.FC = () => {
   }, []);
 
   const handleFinanciamento = (moto: any) => {
+    console.log('Selected Moto for Financiamento:', moto);
     setSelectedMoto(moto);
     setModalType('financiamento');
     setShowModal(true);
   };
 
   const handleConsorcio = (moto: any) => {
+    console.log('Selected Moto for Consorcio:', moto);
     setSelectedMoto(moto);
     setModalType('consorcio');
     setShowModal(true);
   };
 
   const handleInformacoes = (moto: any) => {
+    console.log('Selected Moto for Informacoes:', moto);
     setSelectedMoto(moto);
     setModalType('informacoes');
     setShowModal(true);
@@ -71,10 +63,19 @@ const App: React.FC = () => {
   return (
     <div className="container">
       <Header />
-      <MainContent motos={motos} handleFinanciamento={handleFinanciamento} handleConsorcio={handleConsorcio} handleInformacoes={handleInformacoes} />
+      <MainContent 
+        motos={motos} 
+        handleFinanciamento={handleFinanciamento} 
+        handleConsorcio={handleConsorcio} 
+        handleInformacoes={handleInformacoes} 
+      />
       <Footer isFooterVisible={isFooterVisible} />
       {showModal && selectedMoto && (
-        <Modal closeModal={closeModal} modalType={modalType} selectedMoto={selectedMoto} />
+        <Modal 
+          closeModal={closeModal} 
+          modalType={modalType} 
+          selectedMoto={selectedMoto} 
+        />
       )}
     </div>
   );
