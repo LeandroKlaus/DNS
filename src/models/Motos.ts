@@ -81,7 +81,7 @@ export const motos = [
   },
   {
     id: 5,
-    modelo: 'Yamaha R3',
+    modelo: 'Yamaha R15 Connected',
     imagem: r15,
     consorcio: {
       descricao: 'Consórcio para Yamaha R3',
@@ -98,7 +98,7 @@ export const motos = [
   },
   {
     id: 6,
-    modelo: 'Yamaha R3',
+    modelo: 'Yamaha Factor DX',
     imagem: factor1,
     consorcio: {
       descricao: 'Consórcio para Yamaha R3',
@@ -115,7 +115,7 @@ export const motos = [
   },
   {
     id: 7,
-    modelo: 'Yamaha R3',
+    modelo: 'Yamaha Factor',
     imagem: factor2,
     consorcio: {
       descricao: 'Consórcio para Yamaha R3',
@@ -132,7 +132,7 @@ export const motos = [
   },
   {
     id: 8,
-    modelo: 'Yamaha R3',
+    modelo: 'Yamaha Crosser Z ABS',
     imagem: crosser2,
     consorcio: {
       descricao: 'Consórcio para Yamaha R3',
@@ -149,7 +149,7 @@ export const motos = [
   },
   {
     id: 9,
-    modelo: 'Yamaha R3',
+    modelo: 'Yamaha Lander Connected',
     imagem: lander,
     consorcio: {
       descricao: 'Consórcio para Yamaha R3',
@@ -166,7 +166,7 @@ export const motos = [
   },
   {
     id: 10,
-    modelo: 'Yamaha R3',
+    modelo: 'Yamaha Crosser S ABS',
     imagem: crosser1,
     consorcio: {
       descricao: 'Consórcio para Yamaha R3',
