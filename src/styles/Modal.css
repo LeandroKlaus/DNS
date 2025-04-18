@@ -1,64 +1,127 @@
+/* Overlay do Modal */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1001;
-  }
-  
-  .modal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .modal h2 {
-    margin-top: 0;
-  }
-  
-  .modal form {
-    display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+/* Container do Modal */
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form label {
+  display: block;
+  margin: 10px 0;
+}
+
+.modal form input,
+.modal form select {
+  display: block;
+  width: 90%;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal form .btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+  background-color: #ffffff;
+  color: #151515;
+  border: 2px solid #151515;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+/* Container do carrossel */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilização da imagem do carrossel */
+.carousel-img {
+  width: 80%;
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+  .carousel-container {
     flex-direction: column;
   }
   
-  .modal form label {
-    display: block;
+  .carousel-img {
+    width: 100%;
     margin: 10px 0;
   }
   
-  .modal form input,
-  .modal form select {
-    display: block;
-    width: 90%;
-    margin-top: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .modal form .btn {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .ficha-tecnica {
-    text-align: left;
-    margin: 20px 0;
-  }
-  
-  .ficha-tecnica p {
+  .carousel-btn {
     margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    width: auto;
   }
-  
+}
+
+/* Estilização das opções de parcelamento */
+.parcelas-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.parcelas-option {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #151515;
+  display: block;
+  width: 95%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.parcelas-option input {
+  margin-right: 8px;
+  transform: scale(1.2);
+}

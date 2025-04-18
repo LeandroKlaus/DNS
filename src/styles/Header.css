@@ -21,23 +21,11 @@
     gap: 10px;
   }
   
-  .header-content .GS {
+  .header-content .DNS {
     margin-left: 50px;
-    width: 45px;
+    width: 190px;
     height: auto;
     margin-right: 10px;
-  }
-  
-  .header-logo-center {
-    margin-right: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  }
-  
-  .header-logo-center img {
-    max-height: 100px;
   }
   
   .nav-large {

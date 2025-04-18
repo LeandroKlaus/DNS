@@ -33,9 +33,9 @@ footer {
   }
   
   .footer-logo {
-    width: 50px;
+    width: 70px !important;
     height: auto;
-    margin-left: 0px;
+    margin-left: -50px !important;
   }
   
   .footer-powered {

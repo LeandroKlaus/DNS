@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from '../assets/GS.svg';
-import centralLogo from '../assets/Braga.svg';
+import logo from '../assets/DNSites.svg';
 import instaIcon from '../assets/Insta.svg';
 import wppIcon from '../assets/Wpp.svg';
 import locIcon from '../assets/Loc.svg';
@@ -9,11 +8,7 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-content">
-        <img src={logo} alt="Logo" className="GS" />
-        <a href="#" className="nav-large">Gustavo Sadok</a>
-      </div>
-      <div className="header-logo-center">
-        <img src={centralLogo} alt="Central Logo" />
+        <img src={logo} alt="Logo" className="DNS" />
       </div>
       <nav className="nav-icons">
         <ul className="nav-menu-icons">

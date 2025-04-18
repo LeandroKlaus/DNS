@@ -3,135 +3,120 @@ import React, { useState } from 'react';
 interface ModalProps {
   closeModal: () => void;
   modalType: string;
-  selectedMoto: any;
+  selectedConsumivel: any;
 }
 
-const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedMoto }) => {
-  const [entrada, setEntrada] = useState<string>('');
-  const [nascimento, setNascimento] = useState<string>('');
-  const [cpf, setCpf] = useState<string>('');
-  const [nome, setNome] = useState<string>('');
-  const [habilitacao, setHabilitacao] = useState<string>('sim');
-  const [celular, setCelular] = useState<string>('');
+const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedConsumivel }) => {
+  const [parcelas, setParcelas] = useState<string>('');
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  const formatCurrency = (value: string) => {
-    const numericValue = value.replace(/\D/g, '');
-    const formattedValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(parseFloat(numericValue) / 100);
-    return formattedValue.replace('R$', 'R$ ');
+  const handlePrevImage = () => {
+    if (selectedConsumivel.images && selectedConsumivel.images.length > 0) {
+      setCurrentImageIndex(prevIndex =>
+        prevIndex === 0 ? selectedConsumivel.images.length - 1 : prevIndex - 1
+      );
+    }
   };
 
-  const handleEntradaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formattedValue = formatCurrency(e.target.value);
-    setEntrada(formattedValue);
+  const handleNextImage = () => {
+    if (selectedConsumivel.images && selectedConsumivel.images.length > 0) {
+      setCurrentImageIndex(prevIndex =>
+        prevIndex === selectedConsumivel.images.length - 1 ? 0 : prevIndex + 1
+      );
+    }
   };
 
-  const handleSubmitFinanciamento = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mensagem = `Solicitação de Financiamento:
-    \nModelo: ${selectedMoto.modelo}
-    \nValor de entrada: ${entrada}
-    \nData de nascimento: ${nascimento}
-    \nCPF: ${cpf}
-    \nNome completo: ${nome}
-    \nPossui habilitação: ${habilitacao}
-    \nDDD + Celular: ${celular}`;
-    const whatsappLink = `https://wa.me/5592981561566?text=${encodeURIComponent(mensagem)}`;
+  const handleComprarAvista = () => {
+    const mensagem = `Olá, desejo adquirir o produto ${selectedConsumivel.modelo} como podemos prosseguir?`;
+    const whatsappLink = `https://wa.me/5592984615420?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappLink, '_blank');
   };
 
-  const handleSubmitConsorcio = () => {
-    const mensagem = `Olá, estou interessado no consórcio da moto ${selectedMoto.modelo}`;
-    const whatsappLink = `https://wa.me/5592981561566?text=${encodeURIComponent(mensagem)}`;
+  const handleComprarParcelamento = () => {
+    if (!parcelas) {
+      alert("Por favor, selecione uma opção de parcelamento.");
+      return;
+    }
+    const mensagem = `Olá, desejo adquirir o produto ${selectedConsumivel.modelo} em ${parcelas} vezes, como podemos prosseguir?`;
+    const whatsappLink = `https://wa.me/5592984615420?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappLink, '_blank');
   };
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        {modalType === 'financiamento' && (
+        {modalType === 'avista' && (
           <>
-            <h2>{selectedMoto.modelo}</h2>
-            <form onSubmit={handleSubmitFinanciamento}>
-              <label>
-                Valor de entrada:
-                <input 
-                  type="text" 
-                  name="entrada" 
-                  value={entrada} 
-                  onChange={handleEntradaChange} 
-                />
-              </label>
-              <label>
-                Data de nascimento:
-                <input 
-                  type="date" 
-                  name="nascimento" 
-                  value={nascimento}
-                  onChange={(e) => setNascimento(e.target.value)}
-                />
-              </label>
-              <label>
-                CPF:
-                <input 
-                  type="text" 
-                  name="cpf" 
-                  value={cpf}
-                  onChange={(e) => setCpf(e.target.value)}
-                />
-              </label>
-              <label>
-                Nome completo:
-                <input 
-                  type="text" 
-                  name="nome" 
-                  value={nome}
-                  onChange={(e) => setNome(e.target.value)}
-                />
-              </label>
-              <label>
-                Possui Habilitação?
-                <select 
-                  name="habilitacao" 
-                  value={habilitacao}
-                  onChange={(e) => setHabilitacao(e.target.value)}
-                >
-                  <option value="sim">Sim</option>
-                  <option value="nao">Não</option>
-                </select>
-              </label>
-              <label>
-                DDD + Celular:
-                <input 
-                  type="text" 
-                  name="celular" 
-                  value={celular}
-                  onChange={(e) => setCelular(e.target.value)}
-                />
-              </label>
-              <button type="submit" className="btn">Enviar</button>
-              <button type="button" className="btn" onClick={closeModal}>Cancelar</button>
-            </form>
+            <h2>{selectedConsumivel.modelo} - À vista</h2>
+            <p>Valor: {selectedConsumivel.valor ? selectedConsumivel.valor : 'Valor não disponível'}</p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: '20px',
+                gap: '10px',
+              }}
+            >
+              <button className="btn" onClick={handleComprarAvista}>Comprar</button>
+              <button className="btn" onClick={closeModal}>Fechar</button>
+            </div>
           </>
         )}
-        {modalType === 'consorcio' && (
+        {modalType === 'parcelamento' && (
           <>
-            <h2>{selectedMoto.modelo} - Consórcio</h2>
-            <p>{selectedMoto.consorcio.descricao}</p>
-            <p>Valor: {selectedMoto.consorcio.valor}</p>
-            <button type="button" className="btn" onClick={handleSubmitConsorcio}>Enviar</button>
-            <button type="button" className="btn" onClick={closeModal}>Fechar</button>
+            <h2>{selectedConsumivel.modelo} - Parcelamento</h2>
+            <p>Selecione o número de parcelas:</p>
+            <div className="parcelas-options">
+              {Array.from({ length: 11 }, (_, i) => {
+                const option = i + 2;
+                return (
+                  <label key={option} className="parcelas-option">
+                    <input
+                      type="radio"
+                      name="parcelas"
+                      value={option}
+                      checked={parcelas === option.toString()}
+                      onChange={(e) => setParcelas(e.target.value)}
+                    />
+                    {`Parcelar em ${option}x`}
+                  </label>
+                );
+              })}
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: '20px',
+                gap: '10px',
+              }}
+            >
+              <button className="btn" onClick={handleComprarParcelamento}>Comprar</button>
+              <button className="btn" onClick={closeModal}>Fechar</button>
+            </div>
           </>
         )}
         {modalType === 'informacoes' && (
           <>
-            <h2>{selectedMoto.modelo} - Ficha Técnica</h2>
-            <p>{selectedMoto.fichaTecnica?.Especificacoes_Gerais || 'Nenhuma informação disponível'}</p>
-            <p>Motor: {selectedMoto.fichaTecnica?.Motor || 'Nenhuma informação disponível'}</p>
-            <p>Transmissão: {selectedMoto.fichaTecnica?.Transmissao || 'Nenhuma informação disponível'}</p>
-            <p>Suspensão e Freios: {selectedMoto.fichaTecnica?.Suspensao_e_Freios || 'Nenhuma informação disponível'}</p>
-            <p>Dimensões: {selectedMoto.fichaTecnica?.Dimensoes || 'Nenhuma informação disponível'}</p>
-            <p>Pneus: {selectedMoto.fichaTecnica?.Pneus || 'Nenhuma informação disponível'}</p>
-            <button type="button" className="btn" onClick={closeModal}>Fechar</button>
+            <h2>{selectedConsumivel.modelo} - Informações</h2>
+            {selectedConsumivel.images && selectedConsumivel.images.length > 0 ? (
+              <div className="carousel-container">
+                <button className="carousel-btn" onClick={handlePrevImage}>Anterior</button>
+                <img
+                  src={selectedConsumivel.images[currentImageIndex]}
+                  alt={`Imagem ${currentImageIndex + 1}`}
+                  className="carousel-img"
+                />
+                <button className="carousel-btn" onClick={handleNextImage}>Próxima</button>
+              </div>
+            ) : (
+              <p>Imagem não disponível</p>
+            )}
+            <div style={{ marginTop: '20px', textAlign: 'center' }}>
+              <button className="btn" onClick={closeModal}>Fechar</button>
+            </div>
           </>
         )}
       </div>
