@@ -1,7 +1,7 @@
 import consumivel1 from '../assets/dunk.png';
 import consumivel2 from '../assets/zaad.png';
 import consumivel3 from '../assets/terno.png';
-import consumivel4 from '../assets/sol.png';
+import consumivel4 from '../assets/solar.png';
 import consumivel5 from '../assets/colar.png';
 
 export const consumiveis = [
