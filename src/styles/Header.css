@@ -1,116 +1,113 @@
-/* Header principal */
+/* HEADER PRINCIPAL */
 .header {
   background-color: #ffffff !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: 10px 20px !important;  /* Padding lateral definido */
-  height: 50px !important;
+  padding: 12px 20px !important; /* Espaçamento interno consistente */
+  height: 60px !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
+  width: 100vw !important; /* Garante que ocupe a largura total da viewport */
+  box-sizing: border-box !important;
   z-index: 1000 !important;
   border-bottom: none !important;
   box-shadow: none !important;
 }
 
-/* Container do logo à esquerda */
+/* CONTAINER DO LOGO */
 .header-content {
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
-}
-
-/* Logo dentro do header */
-.header-content .DNS {
-  margin-left: 20px !important;  /* Ajusta para que não fique muito para dentro */
-  width: 190px !important;
-  height: auto !important;
-  margin-right: 10px !important;
-}
-
-/* Container dos ícones à direita */
-.nav-icons {
-  display: flex !important;
-  align-items: center !important;
-  margin-left: auto !important;
-}
-
-/* Lista dos ícones – removida margem extra para enquadramento consistente */
-.nav-menu-icons {
-  list-style: none !important;
-  padding: 0 !important;
-  display: flex !important;
-  gap: 10px !important;
+  box-sizing: border-box !important;
   margin: 0 !important;
 }
 
-/* Cada item da lista */
-.nav-menu-icons li {
-  display: inline !important;
+/* LOGO */
+.header-content .DNS {
+  margin: 0 !important;
+  width: 190px !important;
+  height: auto !important;
 }
 
-/* Links dos ícones */
+/* CONTAINER DOS ÍCONES */
+.nav-icons {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  box-sizing: border-box !important;
+}
+
+/* LISTA DE ÍCONES */
+.nav-menu-icons {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  gap: 10px !important;
+  box-sizing: border-box !important;
+}
+
+/* ITENS DA LISTA */
+.nav-menu-icons li {
+  display: inline !important;
+  box-sizing: border-box !important;
+}
+
+/* LINKS DOS ÍCONES */
 .nav-menu-icons li a {
   text-decoration: none !important;
   transition: color 0.3s !important;
+  box-sizing: border-box !important;
 }
 
-/* Ícones dos links */
+/* ÍCONES */
 .nav-menu-icons li img {
   width: 24px !important;
   height: 24px !important;
-  transition: filter 0.3s !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Efeito de hover nos ícones */
+/* Hover nos Ícones */
 .nav-menu-icons li:hover img {
   filter: invert(31%) sepia(92%) saturate(7402%) hue-rotate(349deg) brightness(90%) contrast(115%) !important;
 }
 
-/* Responsividade para tablets (até 768px) */
+/* MEDIA QUERIES */
+
+/* Para tablets (até 768px) */
 @media (max-width: 768px) {
   .header {
-    padding: 10px 20px !important;
+    padding: 12px 20px !important;
     height: 60px !important;
   }
-  
   .header-content .DNS {
-    width: 150px !important;
-    margin-left: 15px !important;
-    margin-right: 5px !important;
+    width: 170px !important;
   }
-  
-  .nav-menu-icons {
-    gap: 8px !important;
-  }
-  
   .nav-menu-icons li img {
     width: 22px !important;
     height: 22px !important;
   }
 }
 
-/* Responsividade para celulares (até 480px) */
+/* Para celulares (até 480px) */
 @media (max-width: 480px) {
   .header {
-    flex-direction: row !important;
-    padding: 8px 15px !important;
-    height: auto !important;
+    padding: 12px 15px !important;
+    height: 60px !important;
   }
-  
   .header-content .DNS {
-    width: 130px !important;
-    margin-left: 10px !important;
+    width: 150px !important;
   }
-  
   .nav-menu-icons {
-    gap: 5px !important;
+    gap: 8px !important;
   }
-  
   .nav-menu-icons li img {
-    width: 20px !important;
-    height: 20px !important;
+    width: 26px !important;
+    height: 26px !important;
   }
 }
