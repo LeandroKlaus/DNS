@@ -13,17 +13,17 @@ const Header: React.FC = () => {
       <nav className="nav-icons">
         <ul className="nav-menu-icons">
           <li>
-            <a href="https://www.instagram.com/gustavomt09yt" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/dnsites" target="_blank" rel="noopener noreferrer">
               <img src={instaIcon} alt="Instagram" />
             </a>
           </li>
           <li>
-            <a href="https://wa.me/5592981561566?text=Olá,%20Gustavo,%20estou%20interessado%20em%20adquirir%20uma%20nova%20moto." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5592984615420?text=Olá,%20estou%20interessado%20em%20adquirir%20um%20site." target="_blank" rel="noopener noreferrer">
               <img src={wppIcon} alt="WhatsApp" />
             </a>
           </li>
           <li>
-            <a href="https://maps.app.goo.gl/fwahKuGHbpweXcbj7" target="_blank" rel="noopener noreferrer">
+            <a href="https://maps.app.goo.gl/J8KG8PQV8a5m7mAFA" target="_blank" rel="noopener noreferrer">
               <img src={locIcon} alt="Localização" />
             </a>
           </li>
