@@ -44,10 +44,7 @@ const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedConsumivel
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
-      {/* 
-        Todos os modais agora recebem a classe "modal-parcelamento",
-        garantindo que fiquem com a mesma largura definida.
-      */}
+      {/* Todos os modais deste componente agora recebem a classe "modal-parcelamento" */}
       <div className="modal modal-parcelamento" onClick={(e) => e.stopPropagation()}>
         {modalType === 'avista' && (
           <>
@@ -67,12 +64,8 @@ const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedConsumivel
                 gap: "10px",
               }}
             >
-              <button className="btn" onClick={handleComprarAvista}>
-                Comprar
-              </button>
-              <button className="btn" onClick={closeModal}>
-                Fechar
-              </button>
+              <button className="btn" onClick={handleComprarAvista}>Comprar</button>
+              <button className="btn" onClick={closeModal}>Fechar</button>
             </div>
           </>
         )}
@@ -106,12 +99,8 @@ const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedConsumivel
                 gap: "10px",
               }}
             >
-              <button className="btn" onClick={handleComprarParcelamento}>
-                Comprar
-              </button>
-              <button className="btn" onClick={closeModal}>
-                Fechar
-              </button>
+              <button className="btn" onClick={handleComprarParcelamento}>Comprar</button>
+              <button className="btn" onClick={closeModal}>Fechar</button>
             </div>
           </>
         )}
@@ -120,25 +109,19 @@ const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedConsumivel
             <h2>{selectedConsumivel.modelo} - Informações</h2>
             {selectedConsumivel.images && selectedConsumivel.images.length > 0 ? (
               <div className="carousel-container">
-                <button className="carousel-btn" onClick={handlePrevImage}>
-                  Anterior
-                </button>
+                <button className="carousel-btn" onClick={handlePrevImage}>Anterior</button>
                 <img
                   src={selectedConsumivel.images[currentImageIndex]}
                   alt={`Imagem ${currentImageIndex + 1}`}
                   className="carousel-img"
                 />
-                <button className="carousel-btn" onClick={handleNextImage}>
-                  Próxima
-                </button>
+                <button className="carousel-btn" onClick={handleNextImage}>Próxima</button>
               </div>
             ) : (
               <p>Imagem não disponível</p>
             )}
             <div style={{ marginTop: "20px", textAlign: "center" }}>
-              <button className="btn" onClick={closeModal}>
-                Fechar
-              </button>
+              <button className="btn" onClick={closeModal}>Fechar</button>
             </div>
           </>
         )}

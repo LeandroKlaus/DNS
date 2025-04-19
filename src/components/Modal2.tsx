@@ -8,7 +8,6 @@ interface Modal2Props {
 
 const Modal2: React.FC<Modal2Props> = ({ closeModal, modalType, selectedDuravel }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-
   const [entryValue, setEntryValue] = useState('');
   const [birthDate, setBirthDate] = useState('');
   const [cpf, setCpf] = useState('');
@@ -36,7 +35,7 @@ const Modal2: React.FC<Modal2Props> = ({ closeModal, modalType, selectedDuravel 
   if (modalType === 'financiamento') {
     return (
       <div className="modal2-overlay" onClick={closeModal}>
-        <div className="modal2 modal2-parcelamento" onClick={(e) => e.stopPropagation()}>
+        <div className="modal2 modal2-financiamento" onClick={(e) => e.stopPropagation()}>
           <h2>{selectedDuravel.modelo} - Financiamento</h2>
           <form
             className="financiamento-form"
@@ -130,7 +129,7 @@ const Modal2: React.FC<Modal2Props> = ({ closeModal, modalType, selectedDuravel 
   } else if (modalType === 'consorcio') {
     return (
       <div className="modal2-overlay" onClick={closeModal}>
-        <div className="modal2 modal2-parcelamento" onClick={(e) => e.stopPropagation()}>
+        <div className="modal2" onClick={(e) => e.stopPropagation()}>
           <h2>{selectedDuravel.modelo} - Consórcio</h2>
           <p>{selectedDuravel.consorcio.descricao}</p>
           <p>Valor: {selectedDuravel.consorcio.valor}</p>
@@ -155,7 +154,7 @@ const Modal2: React.FC<Modal2Props> = ({ closeModal, modalType, selectedDuravel 
   } else if (modalType === 'informacoes') {
     return (
       <div className="modal2-overlay" onClick={closeModal}>
-        <div className="modal2 modal2-parcelamento" onClick={(e) => e.stopPropagation()}>
+        <div className="modal2" onClick={(e) => e.stopPropagation()}>
           <h2>{selectedDuravel.modelo} - Informações</h2>
           {selectedDuravel.images && selectedDuravel.images.length > 0 ? (
             <div className="carousel-container">

@@ -1,3 +1,8 @@
+/* Garantindo que todo elemento dentro do modal utilize o box-sizing correto */
+.modal2, .modal2 * {
+  box-sizing: border-box;
+}
+
 .modal2-overlay {
   position: fixed;
   top: 0;
@@ -20,13 +25,23 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Regra aplicada a todos os modais do Modal2 para manter a mesma largura e tamanho */
+/* Regra aplicada a todos os modais do Modal2 para padronizar o tamanho */
 .modal2-parcelamento {
-  width: 70% !important;       /* Reduz a largura geral */
-  max-width: 400px !important;  /* Limita a largura máxima */
-  padding: 15px !important;     /* Menor padding para o visual compacto */
+  width: 70% !important;       /* Largura padrão */
+  max-width: 400px !important;  /* Limite da largura */
+  padding: 15px !important;     /* Padding interno */
 }
 
+/* Responsividade para dispositivos móveis no Modal2 */
+@media (max-width: 480px) {
+  .modal2{
+    width: 90% !important;
+    max-width: 320px !important;
+    padding: 12px !important;
+  }
+}
+
+/* Financiamento form styling */
 .financiamento-form .form-group {
   margin-bottom: 15px;
   text-align: left;
@@ -47,6 +62,7 @@
   border-radius: 5px;
 }
 
+/* Botões internos dos formulários e modais */
 .form-buttons {
   display: flex;
   flex-direction: column;
@@ -56,7 +72,7 @@
 }
 
 .btn {
-  width: 100%;
+  width: 100%; /* Já leva em consideração o box-sizing para não ultrapassar */
   padding: 10px;
   border: 2px solid #151515; /* Borda na cor do fundo */
   border-radius: 5px;
@@ -97,14 +113,14 @@
   text-align: center;
 }
 
-/* Estilização da imagem do carrossel */
+/* Imagem do carrossel */
 .carousel-img {
   width: 80%;
   border-radius: 10px;
   margin: 0 20px;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Responsividade para dispositivos móveis no carrossel */
 @media (max-width: 480px) {
   .carousel-container {
     flex-direction: column;

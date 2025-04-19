@@ -22,11 +22,20 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Regra aplicada a todos os modais (via classe modal-parcelamento) */
+/* Regra aplicada a todos os modais deste componente (inclusive parcelamento) */
 .modal-parcelamento {
-  width: 70% !important;       /* Define que o modal ocupará 70% da largura disponível */
-  max-width: 400px !important;  /* Limita a largura máxima a 400px */
-  padding: 15px !important;     /* Reduz o padding para um visual mais compacto */
+  width: 70% !important;       /* Largura padrão */
+  max-width: 400px !important;  /* Limite máximo */
+  padding: 15px !important;     /* Padding interno */
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 480px) {
+  .modal-parcelamento {
+    width: 90% !important;       /* Ampliamos para 90% da viewport */
+    max-width: 320px !important;  /* Limite máximo reduzido */
+    padding: 12px !important;     /* Padding reduzido */
+  }
 }
 
 .modal h2 {
@@ -90,7 +99,7 @@
   margin: 0 20px;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Responsividade para dispositivos móveis no carrossel */
 @media (max-width: 480px) {
   .carousel-container {
     flex-direction: column;
@@ -119,16 +128,17 @@
 
 .parcelas-option {
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #151515;
   display: block;
   width: 95%;
-  padding: 8px 12px;
+  padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-.parcelas-option input {
-  margin-right: 8px;
-  transform: scale(1.2);
+.parcelas-option:hover {
+  background-color: #f0f0f0;
 }
