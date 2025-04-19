@@ -24,7 +24,7 @@
 
 /* Regra aplicada a todos os modais deste componente (inclusive parcelamento) */
 .modal-parcelamento {
-  width: 70% !important;       /* Largura padrão */
+  width: 90% !important;       /* Largura padrão */
   max-width: 400px !important;  /* Limite máximo */
   padding: 15px !important;     /* Padding interno */
 }
@@ -33,7 +33,7 @@
 @media (max-width: 480px) {
   .modal-parcelamento {
     width: 90% !important;       /* Ampliamos para 90% da viewport */
-    max-width: 320px !important;  /* Limite máximo reduzido */
+    max-width: 420px !important;  /* Limite máximo reduzido */
     padding: 12px !important;     /* Padding reduzido */
   }
 }

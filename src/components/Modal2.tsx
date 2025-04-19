@@ -35,7 +35,8 @@ const Modal2: React.FC<Modal2Props> = ({ closeModal, modalType, selectedDuravel 
   if (modalType === 'financiamento') {
     return (
       <div className="modal2-overlay" onClick={closeModal}>
-        <div className="modal2 modal2-financiamento" onClick={(e) => e.stopPropagation()}>
+        {/* Para financiamento, usamos apenas a classe "modal2" */}
+        <div className="modal2" onClick={(e) => e.stopPropagation()}>
           <h2>{selectedDuravel.modelo} - Financiamento</h2>
           <form
             className="financiamento-form"

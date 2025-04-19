@@ -25,56 +25,80 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Regra aplicada a todos os modais do Modal2 para padronizar o tamanho */
-.modal2-parcelamento {
-  width: 70% !important;       /* Largura padrão */
-  max-width: 400px !important;  /* Limite da largura */
-  padding: 15px !important;     /* Padding interno */
-}
-
 /* Responsividade para dispositivos móveis no Modal2 */
 @media (max-width: 480px) {
-  .modal2{
+  .modal2 {
     width: 90% !important;
-    max-width: 320px !important;
+    max-width: 420px !important;
     padding: 12px !important;
+  }
+  
+  .modal2 h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .modal2 form label {
+    font-size: 14px;
+  }
+  
+  .modal2 form input,
+  .modal2 form select {
+    font-size: 14px;
+  }
+  
+  .modal2 .btn {
+    font-size: 16px;
   }
 }
 
-/* Financiamento form styling */
-.financiamento-form .form-group {
-  margin-bottom: 15px;
-  text-align: left;
+.modal2 h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
-.financiamento-form label {
+.modal2 form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal2 form label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+  margin: 10px 0;
 }
 
-.financiamento-form input,
-.financiamento-form select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
+.modal2 form input,
+.modal2 form select {
+  display: block;
+  width: 90%;
+  margin-top: 5px;
+  padding: 10px;
   border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-/* Botões internos dos formulários e modais */
+/* Ajuste dos botões do formulário */
 .form-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+/* NOVA REGRA: Espaçamento maior entre os botões de Consorciar e Fechar */
+.modal2-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px !important; /* Espaçamento aumentado */
+  margin-top: 15px;
   align-items: center;
 }
 
 .btn {
-  width: 100%; /* Já leva em consideração o box-sizing para não ultrapassar */
-  padding: 10px;
-  border: 2px solid #151515; /* Borda na cor do fundo */
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #151515;
   border-radius: 5px;
   background-color: transparent;
   color: #151515;
@@ -113,14 +137,14 @@
   text-align: center;
 }
 
-/* Imagem do carrossel */
+/* Imagem do carrossel – garantindo que seja exibida */
 .carousel-img {
+  display: block;
   width: 80%;
   border-radius: 10px;
   margin: 0 20px;
 }
 
-/* Responsividade para dispositivos móveis no carrossel */
 @media (max-width: 480px) {
   .carousel-container {
     flex-direction: column;
