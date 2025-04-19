@@ -1,70 +1,116 @@
+/* Estilização Geral do Header */
 .header {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    border-bottom: none;
-    box-shadow: none;
-  }
-  
-  .header-content {
-    margin-right: 60px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+/* Conteúdo à esquerda (Logo) */
+.header-content {
+  margin-right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-content .DNS {
+  margin-left: 50px;
+  width: 190px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Barra lateral com os ícones */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Lista de ícones; o margin-right define a distância dos ícones da borda direita */
+.nav-menu-icons {
+  margin-right: 80px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-menu-icons li {
+  display: inline;
+}
+
+.nav-menu-icons li a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-menu-icons li img {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s;
+}
+
+.nav-menu-icons li:hover img {
+  filter: invert(31%) sepia(92%) saturate(7402%) hue-rotate(349deg) brightness(90%) contrast(115%);
+}
+
+/* Responsividade para telas menores */
+
+/* Para tablets e larguras até 768px */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+    height: 60px;
   }
   
   .header-content .DNS {
-    margin-left: 50px;
-    width: 190px;
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  .nav-large {
-    text-decoration: none;
-    color: #333;
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  .nav-icons {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+    margin-left: 20px;
+    width: 150px;
+    margin-right: 5px;
   }
   
   .nav-menu-icons {
-    margin-right: 80px;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .nav-menu-icons li {
-    display: inline;
-  }
-  
-  .nav-menu-icons li a {
-    text-decoration: none;
-    transition: color 0.3s;
+    margin-right: 20px;
+    gap: 8px;
   }
   
   .nav-menu-icons li img {
-    width: 24px;
-    height: 24px;
-    transition: filter 0.3s;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Para celulares e larguras até 480px */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: row;
+    padding: 8px 15px;
+    height: auto;
   }
   
-  .nav-menu-icons li:hover img {
-    filter: invert(31%) sepia(92%) saturate(7402%) hue-rotate(349deg) brightness(90%) contrast(115%);
+  .header-content .DNS {
+    margin-left: 10px;
+    width: 130px;
   }
   
+  .nav-menu-icons {
+    margin-right: 10px;
+    gap: 5px;
+  }
+  
+  .nav-menu-icons li img {
+    width: 20px;
+    height: 20px;
+  }
+}
