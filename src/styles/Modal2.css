@@ -20,6 +20,13 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* Regra aplicada a todos os modais do Modal2 para manter a mesma largura e tamanho */
+.modal2-parcelamento {
+  width: 70% !important;       /* Reduz a largura geral */
+  max-width: 400px !important;  /* Limita a largura máxima */
+  padding: 15px !important;     /* Menor padding para o visual compacto */
+}
+
 .financiamento-form .form-group {
   margin-bottom: 15px;
   text-align: left;
@@ -63,4 +70,53 @@
 .btn:hover {
   background-color: #151515;
   color: #fff;
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+  background-color: #ffffff;
+  color: #151515;
+  border: 2px solid #151515;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+/* Container do carrossel */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilização da imagem do carrossel */
+.carousel-img {
+  width: 80%;
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+  .carousel-container {
+    flex-direction: column;
+  }
+  
+  .carousel-img {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .carousel-btn {
+    margin: 5px 0;
+    width: auto;
+  }
 }
