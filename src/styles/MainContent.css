@@ -59,7 +59,7 @@
 .product-buttons button {
   width: 90%;
   padding: 8px 12px;
-  border: 2px solid #151515; /* Borda na cor do fundo */
+  border: 2px solid #151515;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
@@ -72,22 +72,21 @@
   color: #fff;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 1024px) {
   .products-grid {
-    grid-template-columns: repeat(3, 1fr); /* Reduz para 3 itens por linha */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .products-grid {
-    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 itens por linha */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .products-grid {
-    grid-template-columns: 1fr; /* Apenas 1 item por linha */
+    grid-template-columns: 1fr;
   }
 
   .main-title {
@@ -99,6 +98,6 @@
   }
 
   .product-buttons button {
-    width: 100%; /* Botões ocupam toda a largura em telas menores */
+    width: 100%;
   }
 }

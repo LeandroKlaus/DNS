@@ -1,4 +1,3 @@
-/* Adicionando uma fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
@@ -43,11 +42,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Permite que a logo central ocupe o espaço central */
+  flex-grow: 1;
 }
 
 .header-logo-center img {
-  max-height: 100px; /* Ajuste conforme necessário */
+  max-height: 100px;
 }
 
 .nav-large {
@@ -91,10 +90,10 @@ body {
 }
 
 .main-content {
-  margin-top: 70px !important; /* Ajusta a margem superior para dar espaço ao header fixo */
-  margin-left: 20px; /* Margem à esquerda */
-  margin-right: 20px; /* Margem à direita */
-  margin-bottom: 100px; /* Margem inferior */
+  margin-top: 70px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 100px;
   padding: 40px;
   text-align: center;
   background-color: #151515 !important;
@@ -180,33 +179,33 @@ footer {
   position: relative;
   bottom: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  flex-wrap: wrap; /* Permite que os elementos se ajustem em múltiplas linhas, se necessário */
-  display: none; /* Oculta o footer inicialmente */
+  flex-wrap: wrap;
+  display: none;
 }
 
 .footer-visible {
-  display: flex; /* Exibe o footer quando a classe "footer-visible" é adicionada */
+  display: flex;
 }
 
 .footer-left {
   margin-left: 30px;
   text-align: left;
-  flex: 1; /* Permite que ocupe espaço disponível */
-  font-size: 12px; /* Define o tamanho da fonte menor para o texto no lado esquerdo */
+  flex: 1;
+  font-size: 12px;
 }
 
 .footer-center {
   text-align: center;
-  flex-grow: 1; /* Permite que ocupe o espaço central */
+  flex-grow: 1;
 }
 
 .footer-right {
   text-align: right;
-  flex: 1; /* Permite que ocupe espaço disponível */
+  flex: 1;
 }
 
 .footer-logo {
-  width: 50px; /* Ajuste conforme necessário */
+  width: 50px;
   height: auto;
   margin-left: 0px;
 }
@@ -217,18 +216,17 @@ footer {
   margin-top: 5px;
   color: #151515;
   text-decoration: none;
-  font-size: 12px; /* Ajuste para não ocupar muito espaço */
+  font-size: 12px;
   text-align: right;
 }
 
-/* Estilo para o Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Fundo embaçado */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;

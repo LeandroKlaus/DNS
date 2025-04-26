@@ -1,4 +1,3 @@
-/* Garantindo que todo elemento dentro do modal utilize o box-sizing correto */
 .modal2, .modal2 * {
   box-sizing: border-box;
 }
@@ -25,7 +24,6 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Responsividade para dispositivos móveis no Modal2 */
 @media (max-width: 420px) {
   .modal2 {
     width: 90% !important;
@@ -77,7 +75,6 @@
   border: 1px solid #ccc;
 }
 
-/* Ajuste dos botões do formulário */
 .form-buttons {
   display: flex;
   flex-direction: column;
@@ -86,11 +83,10 @@
   align-items: center;
 }
 
-/* NOVA REGRA: Espaçamento maior entre os botões de Consorciar e Fechar */
 .modal2-buttons {
   display: flex;
   flex-direction: column;
-  gap: 8px !important; /* Espaçamento aumentado */
+  gap: 8px !important;
   margin-top: 15px;
   align-items: center;
 }
@@ -112,7 +108,6 @@
   color: #fff;
 }
 
-/* Botões do carrossel */
 .carousel-btn {
   background-color: #ffffff;
   color: #151515;
@@ -129,7 +124,6 @@
   color: #ffffff;
 }
 
-/* Container do carrossel */
 .carousel-container {
   display: flex;
   align-items: center;
@@ -137,7 +131,6 @@
   text-align: center;
 }
 
-/* Imagem do carrossel – garantindo que seja exibida */
 .carousel-img {
   display: block;
   width: 80%;
