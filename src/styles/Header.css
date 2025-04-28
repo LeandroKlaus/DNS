@@ -29,7 +29,7 @@
   width: 190px !important;
   height: auto !important;
   margin-left: 25px !important;
-  margin-top: 10px !important;
+  margin-top: auto !important;
 }
 
 .nav-icons {
@@ -47,7 +47,7 @@
   gap: 10px !important;
   box-sizing: border-box !important;
   margin-right: 40px !important;
-  margin-top: 10px !important;
+  margin-top: auto !important;
 }
 
 .nav-menu-icons li {
@@ -69,9 +69,14 @@
   box-sizing: border-box !important;
 }
 
-.nav-menu-icons li:hover img {
-  filter: invert(31%) sepia(92%) saturate(7402%) hue-rotate(349deg) brightness(90%) contrast(115%) !important;
+.nav-menu-icons li img {
+  transition: filter 0.3s ease !important;
 }
+
+.nav-menu-icons li:hover img {
+  filter: invert(28%) sepia(80%) saturate(2700%) hue-rotate(270deg) brightness(95%) contrast(100%) !important;
+}
+
 
 @media (max-width: 768px) {
   .header {
