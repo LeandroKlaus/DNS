@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from '../assets/DNS.svg';
 
 const Footer: React.FC = () => {
-  const [isFooterVisible, setFooterVisible] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
 
   const handleScroll = () => {
@@ -24,7 +24,6 @@ const Footer: React.FC = () => {
 
     handleResize();
     handleScroll();
-
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
 
@@ -34,7 +33,7 @@ const Footer: React.FC = () => {
     };
   }, []);
 
-  const finalVisible = isMobile ? isFooterVisible : true;
+  const finalVisible = isMobile ? footerVisible : true;
 
   return (
     <footer className={finalVisible ? "footer footer-visible" : "footer"}>

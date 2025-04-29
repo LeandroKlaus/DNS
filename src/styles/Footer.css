@@ -1,12 +1,16 @@
 footer {
   background-color: #ffffff;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 10px 5px;
   width: 100%;
   position: relative;
   flex-wrap: wrap;
+}
+
+.footer-visible {
+  display: flex;
 }
 
 .footer-left {
