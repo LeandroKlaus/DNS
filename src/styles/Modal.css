@@ -111,7 +111,7 @@
 .parcelas-options {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   align-items: flex-start;
   margin-top: 10px;
   width: 100%;

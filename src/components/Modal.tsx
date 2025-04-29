@@ -44,7 +44,6 @@ const Modal: React.FC<ModalProps> = ({ closeModal, modalType, selectedConsumivel
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
-      {/* Todos os modais deste componente agora recebem a classe "modal-parcelamento" */}
       <div className="modal modal-parcelamento" onClick={(e) => e.stopPropagation()}>
         {modalType === 'avista' && (
           <>
