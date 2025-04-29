@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
@@ -16,15 +16,6 @@ import './styles/Modal2.css';
 import './App.css';
 
 const App: React.FC = () => {
-  const [isFooterVisible, setIsFooterVisible] = useState<boolean>(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsFooterVisible(window.innerHeight + window.scrollY >= document.body.offsetHeight);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedConsumivel, setSelectedConsumivel] = useState<any>(null);
   const [modalType, setModalType] = useState<string>('');
@@ -94,7 +85,7 @@ const App: React.FC = () => {
         handleDuravelConsorcio={handleDuravelConsorcio}
         handleDuravelInformacoes={handleDuravelInformacoes}
       />
-      <Footer isFooterVisible={isFooterVisible} />
+      <Footer />
 
       {showModal && selectedConsumivel && (
         <Modal 

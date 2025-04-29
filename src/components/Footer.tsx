@@ -3,13 +3,12 @@ import logo from '../assets/DNS.svg';
 
 const Footer: React.FC = () => {
   const [footerVisible, setFooterVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
 
   const handleScroll = () => {
     const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
     const docHeight = document.documentElement.scrollHeight;
-    const threshold = 50;
+    const threshold = 50; // Ajuste conforme necessário
     if (scrollPos + windowHeight >= docHeight - threshold) {
       setFooterVisible(true);
     } else {
@@ -18,25 +17,17 @@ const Footer: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 480);
-    };
-
-    handleResize();
     handleScroll();
-    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener('resize', handleScroll);
     return () => {
-      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, []);
 
-  const finalVisible = isMobile ? footerVisible : true;
-
   return (
-    <footer className={finalVisible ? "footer footer-visible" : "footer"}>
+    <footer className={footerVisible ? 'footer footer-visible' : 'footer'}>
       <div className="footer-left">
         <p>&copy; 2025 DNSites. Todos os direitos reservados.</p>
         <p>Seu site premium é nossa prioridade.</p>
