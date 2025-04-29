@@ -26,10 +26,10 @@
   padding: 15px !important;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .modal-parcelamento {
     width: 90% !important;
-    max-width: 390px !important;
+    max-width: 360px !important;
     padding: 12px !important;
   }
 }
