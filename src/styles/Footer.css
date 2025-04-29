@@ -47,3 +47,23 @@ footer {
   font-size: 12px;
   text-align: right;
 }
+
+@media (max-width: 480px) {
+  footer {
+    padding: 5px 3px !important;
+  }
+  
+  .footer-left,
+  .footer-right,
+  .footer-powered {
+    font-size: 10px !important;
+  }
+  
+  .footer-center {
+    font-size: 10px !important;
+  }
+  
+  .footer-logo {
+    width: 40px !important;
+  }
+}
