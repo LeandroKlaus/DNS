@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/DNS.svg';
 
-interface FooterProps {
-  isFooterVisible: boolean;
-}
+const Footer: React.FC = () => {
+  const [isFooterVisible, setFooterVisible] = useState(false);
 
-const Footer: React.FC<FooterProps> = ({ isFooterVisible }) => {
+  const checkIfAtBottom = () => {
+    if (window.innerWidth < 480) {
+      const threshold = 100;
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - threshold) {
+        setFooterVisible(true);
+      } else {
+        setFooterVisible(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth < 480) {
+      checkIfAtBottom();
+      window.addEventListener('scroll', checkIfAtBottom);
+      window.addEventListener('resize', checkIfAtBottom);
+    }
+    return () => {
+      window.removeEventListener('scroll', checkIfAtBottom);
+      window.removeEventListener('resize', checkIfAtBottom);
+    };
+  }, []);
+
   return (
     <footer className={isFooterVisible ? "footer footer-visible" : "footer"}>
       <div className="footer-left">
@@ -16,7 +37,14 @@ const Footer: React.FC<FooterProps> = ({ isFooterVisible }) => {
         <img src={logo} alt="Logo" className="footer-logo" />
       </div>
       <div className="footer-right">
-        <a href="https://www.instagram.com/dnsites" target="_blank" rel="noopener noreferrer" className="footer-powered">Powered by @dnsites</a>
+        <a
+          href="https://www.instagram.com/dnsites"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-powered"
+        >
+          Powered by @dnsites
+        </a>
       </div>
     </footer>
   );
