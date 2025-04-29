@@ -89,6 +89,10 @@
     grid-template-columns: 1fr;
   }
 
+  .main-content {
+    margin-bottom: 140px;
+  }
+
   .main-title {
     font-size: 28px;
   }

@@ -27,6 +27,7 @@ footer {
 .footer-center {
   flex-grow: 1;
   text-align: center;
+  margin-right: 30px !important;
 }
 
 .footer-right {
