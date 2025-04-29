@@ -3,32 +3,39 @@ import logo from '../assets/DNS.svg';
 
 const Footer: React.FC = () => {
   const [isFooterVisible, setFooterVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
 
-  const checkIfAtBottom = () => {
-    if (window.innerWidth < 480) {
-      const threshold = 100;
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - threshold) {
-        setFooterVisible(true);
-      } else {
-        setFooterVisible(false);
-      }
+  const handleScroll = () => {
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const threshold = 50;
+    if (scrollPos + windowHeight >= docHeight - threshold) {
+      setFooterVisible(true);
+    } else {
+      setFooterVisible(false);
     }
   };
 
   useEffect(() => {
-    if (window.innerWidth < 480) {
-      checkIfAtBottom();
-      window.addEventListener('scroll', checkIfAtBottom);
-      window.addEventListener('resize', checkIfAtBottom);
-    }
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 480);
+    };
+    checkMobile();
+    handleScroll();
+    window.addEventListener('resize', checkMobile);
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', checkIfAtBottom);
-      window.removeEventListener('resize', checkIfAtBottom);
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  const finalVisible = isMobile ? isFooterVisible : true;
+
   return (
-    <footer className={isFooterVisible ? "footer footer-visible" : "footer"}>
+    <footer className={finalVisible ? "footer footer-visible" : "footer"}>
       <div className="footer-left">
         <p>&copy; 2025 DNSites. Todos os direitos reservados.</p>
         <p>Seu site premium é nossa prioridade.</p>
@@ -37,10 +44,10 @@ const Footer: React.FC = () => {
         <img src={logo} alt="Logo" className="footer-logo" />
       </div>
       <div className="footer-right">
-        <a
-          href="https://www.instagram.com/dnsites"
-          target="_blank"
-          rel="noopener noreferrer"
+        <a 
+          href="https://www.instagram.com/dnsites" 
+          target="_blank" 
+          rel="noopener noreferrer" 
           className="footer-powered"
         >
           Powered by @dnsites
