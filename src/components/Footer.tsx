@@ -18,16 +18,18 @@ const Footer: React.FC = () => {
   };
 
   useEffect(() => {
-    const checkMobile = () => {
+    const handleResize = () => {
       setIsMobile(window.innerWidth < 480);
     };
-    checkMobile();
+
+    handleResize();
     handleScroll();
-    window.addEventListener('resize', checkMobile);
+
+    window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -44,10 +46,10 @@ const Footer: React.FC = () => {
         <img src={logo} alt="Logo" className="footer-logo" />
       </div>
       <div className="footer-right">
-        <a 
-          href="https://www.instagram.com/dnsites" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://www.instagram.com/dnsites"
+          target="_blank"
+          rel="noopener noreferrer"
           className="footer-powered"
         >
           Powered by @dnsites
