@@ -85,8 +85,9 @@ const App: React.FC = () => {
         handleDuravelConsorcio={handleDuravelConsorcio}
         handleDuravelInformacoes={handleDuravelInformacoes}
       />
-      <Footer />
-
+      
+      {(!showModal && !showModal2) && <Footer />}
+      
       {showModal && selectedConsumivel && (
         <Modal 
           closeModal={closeModal}

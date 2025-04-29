@@ -29,8 +29,8 @@ const MainContent: React.FC<MainContentProps> = ({
 
   return (
     <div className="main-content">
-      <h1 className="main-title">DNSites trazendo sua marca para a web.</h1>
-      <p className="main-description">Solicite agora seu site premium.</p>
+      <h1 className="main-title">DNSites trazendo seus produtos para a web.</h1>
+      <p className="main-description">Solicite agora seu site de vendas premium.</p>
       <div className="products-grid">
         {allProducts.map((product) => (
           <div key={product.id} className="product-card">
