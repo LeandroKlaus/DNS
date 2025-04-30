@@ -1,6 +1,9 @@
-import duravel1 from '../assets/r3.png';
+import duravel1 from '../assets/r3/r3.png';
 import duravel2 from '../assets/polo.png';
 import duravel3 from '../assets/casa1.png';
+import duravel4 from '../assets/r3/r31.png';
+import duravel5 from '../assets/r3/r32.png';
+import duravel6 from '../assets/r3/r33.png';
 
 export const duraveis = [
   {
@@ -8,7 +11,7 @@ export const duraveis = [
     modelo: 'Yamaha R3 Connected',
     imagem: duravel1,
     valor: 'R$ Coloque o preço do seu produto',
-    images: [duravel1, duravel1],
+    images: [duravel1, duravel4, duravel5, duravel6],
     consorcio: {
       descricao: 'Consórcio para Yamaha R3 Connected',
       valor: 'R$ Coloque o preço do seu produto',
