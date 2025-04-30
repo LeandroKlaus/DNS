@@ -102,6 +102,7 @@
   }
   .nav-menu-icons {
     gap: 8px !important;
+    margin-right: 25px !important;
   }
   .nav-menu-icons li img {
     width: 26px !important;
